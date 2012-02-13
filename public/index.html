@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><title>Team Git</title><!-- deck.js styles--><link rel="stylesheet" href="/deck.js/core/deck.core.css"/><link rel="stylesheet" href="/deck.js/extensions/goto/deck.goto.css"/><link rel="stylesheet" href="/deck.js/extensions/menu/deck.menu.css"/><link rel="stylesheet" href="/deck.js/extensions/navigation/deck.navigation.css"/><link rel="stylesheet" href="/deck.js/extensions/status/deck.status.css"/><link rel="stylesheet" href="/deck.js/extensions/hash/deck.hash.css"/><!-- deck.js themes--><link rel="stylesheet" href="/deck.js/themes/style/neon.css"/><link rel="stylesheet" href="/deck.js/themes/transition/horizontal-slide.css"/><!-- deck.js custom build of modernizr--><script src="/deck.js/modernizr.custom.js"></script></head><body class="deck-container"><section id="title-slide" class="slide"><h1>Team Git</h1></section><!--section.slide<h2>Objectives</h2><h3>A Typical Git Flow<ul><li class="slide"><h4>git-clone</h4></li><li class="slide"><h4>git-checkout</h4></li><li class="slide"><h4>git-commit</h4></li><li class="slide"><h4>git-pull</h4></li><li class="slide"><h4>git-push</h4></li></ul></h3>--><!--section.slide<h2>Objectives (cont.)</h2><h3>Explore branch synchronization<ul><li class="slide"><h4>git-pull</h4></li><li class="slide"><h4>git-fetch</h4></li><li class="slide"><h4>git-merge</h4></li><li class="slide"><h4>git-rebase</h4></li></ul></h3>--><!--section.slide<h2>Objectives (cont.)</h2><h3>Interactive Rebase<ul><li class="slide"><h4>git-rebase interactive</h4></li><li class="slide"><h4>git-rebase pick</h4></li><li class="slide"><h4>git-rebase squash</h4></li><li class="slide"><h4>git-rebase reword</h4></li><li class="slide"><h4>git-rebase edit</h4></li><li class="slide"><h4>git-rebase fixup</h4></li></ul></h3>--><!--section.slide<h2>Objectives (cont.)</h2><h3>Three faced Rebase<ul><li class="slide"><h4>git pull --rebase <remote> [branch]
+</h4></li><li class="slide"><h4>git rebase [ref]
+</h4></li><li class="slide"><h4>git rebase -i
+</h4></li></ul></h3>--><section class="slide"><h2>Exploring a Typical Git Workflow</h2><pre class="slide"><code>$ git clone git@github.com:bramswenson/teamgit.git teamgit
+</code></pre><pre class="slide"><code>Cloning into 'teamgit'..."
+remote: Counting objects: 1094, done.
+remote: Compressing objects: 100% (613/613), done.
+remote: Total 1094 (delta 570), reused 820 (delta 398)
+Receiving objects: 100% (1094/1094), 347.61 KiB, done.
+Resolving deltas: 100% (570/570), done.
+</code></pre><pre class="slide"><code>cd teamgit
+</code></pre><pre class="slide"><code>git status
+# On branch master
+nothing to commit (working directory clean)
+</code></pre></section><!--section.slide<pre class="slide"><code>$ git remote
+origin
+</code></pre><pre class="slide"><code>$ git remote -v
+origin  git@github.com:bramswenson/teamgit.git (fetch)
+origin  git@github.com:bramswenson/teamgit.git (push)
+</code></pre><div class="slide"></div>--><section class="slide"><pre><div class="slide"><code>$ git clone git@github.com:bramswenson/teamgit.git teamgit
+</code></div><div class="slide"><code>$ git checkout master && git fetch origin && git merge origin/master
+</code></div><div class="slide"><code>$ git checkout master && git fetch origin && git rebase origin/master
+</code></div></pre></section><script src="/deck.js/jquery-1.7.min.js"></script><script src="/deck.js/core/deck.core.js"></script><script src="/deck.js/extensions/hash/deck.hash.js"></script><script src="/deck.js/extensions/menu/deck.menu.js"></script><script src="/deck.js/extensions/goto/deck.goto.js"></script><script src="/deck.js/extensions/status/deck.status.js"></script><script src="/deck.js/extensions/navigation/deck.navigation.js"></script><script>$(function() {
+  $.deck('.slide');
+});
+</script></body></html>

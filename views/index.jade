@@ -1,0 +1,129 @@
+section.slide#title-slide
+  h1= title
+
+//section.slide
+  h2 Objectives
+
+  h3 A Typical Git Flow
+    ul
+      li.slide
+        h4 git-clone
+      li.slide
+        h4 git-checkout
+      li.slide
+        h4 git-commit
+      li.slide
+        h4 git-pull
+      li.slide
+        h4 git-push
+
+//section.slide
+  h2 Objectives (cont.)
+
+  h3 Explore branch synchronization
+    ul
+      li.slide
+        h4 git-pull
+      li.slide
+        h4 git-fetch
+      li.slide
+        h4 git-merge
+      li.slide
+        h4 git-rebase
+
+//section.slide
+  h2 Objectives (cont.)
+
+  h3 Interactive Rebase
+    ul
+      li.slide
+        h4 git-rebase interactive
+      li.slide
+        h4 git-rebase pick
+      li.slide
+        h4 git-rebase squash
+      li.slide
+        h4 git-rebase reword
+      li.slide
+        h4 git-rebase edit
+      li.slide
+        h4 git-rebase fixup
+
+//section.slide
+  h2 Objectives (cont.)
+
+  h3 Three faced Rebase
+    ul
+      li.slide
+        h4
+          | git pull --rebase <remote> [branch]
+      li.slide
+        h4
+          | git rebase [ref]
+      li.slide
+        h4
+          | git rebase -i
+
+section.slide
+  h2 Exploring a Typical Git Workflow
+
+  pre.slide
+    code
+      | $ git clone git@github.com:bramswenson/teamgit.git teamgit
+  pre.slide
+    code
+      | Cloning into 'teamgit'..."
+      | remote: Counting objects: 1094, done.
+      | remote: Compressing objects: 100% (613/613), done.
+      | remote: Total 1094 (delta 570), reused 820 (delta 398)
+      | Receiving objects: 100% (1094/1094), 347.61 KiB, done.
+      | Resolving deltas: 100% (570/570), done.
+  pre.slide
+    code
+      | cd teamgit
+  pre.slide
+    code
+      | $ git status
+      | # On branch master
+      | nothing to commit (working directory clean)
+  pre.slide
+    code
+      | $ git branch
+      | * master
+  pre.slide
+    code
+      | $ git branch -a
+      | * master
+      | remotes/origin/HEAD -> origin/master
+      | remotes/origin/master
+  pre.slide
+    code
+      | $ git checkout -b topic1 master
+      | Switched to new branch 'topic1'
+  pre.slide
+    code
+
+//section.slide
+  pre.slide
+    code
+      | $ git remote
+      | origin
+  pre.slide
+    code
+      | $ git remote -v
+      | origin  git@github.com:bramswenson/teamgit.git (fetch)
+      | origin  git@github.com:bramswenson/teamgit.git (push)
+  .slide
+
+section.slide
+
+  pre
+    .slide
+      code
+        $ git clone git@github.com:bramswenson/teamgit.git teamgit
+    .slide
+      code
+        $ git checkout master && git fetch origin && git merge origin/master
+    .slide
+      code
+        $ git checkout master && git fetch origin && git rebase origin/master
